@@ -64,7 +64,11 @@ export default function App() {
   }
 
   function NextPage() {
-    setOffSet(prevOffSet => prevOffSet + limit)
+    if (offset === 1300) {
+      alert("No more pokemon")
+    } else {
+      setOffSet(prevOffSet => prevOffSet + limit)
+    }
   }
 
   function PreviousPage() {
