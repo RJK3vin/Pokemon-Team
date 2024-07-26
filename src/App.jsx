@@ -16,6 +16,7 @@ export default function App() {
   const [pokemons, setPokemons] = useState([])
   const [team, setTeam] = useState([])
   const [offset, setOffSet] = useState(20)
+  const [textboxvalue, setTextBoxValue] = useState('')
   const limit = 20
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`)
@@ -31,7 +32,7 @@ export default function App() {
               }))
           )
 
-          Promise.all(pokemonList)
+          Promise.all(pokemonList) 
             .then(pokemonData => {
               setPokemons(pokemonData)
             });
@@ -79,9 +80,29 @@ export default function App() {
     }
   }
 
+  async function Search() {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${textboxvalue.toLowerCase()}`)
+      if (response.ok) {
+        const data = await response.json()
+
+        const pokemon = {
+          id: data.id,
+          name: data.name,
+          image: data.sprites.front_default,
+        }
+
+        MakeTeams(pokemon)
+      } else {
+        alert("Doesn't match boiiiii")
+      }
+      setTextBoxValue('')
+  }
+
   return (
     <>
       <h1>Pokemon Team Builder</h1>
+      <input placeholder="Enter pokemon name" value={textboxvalue} onChange={(event) => setTextBoxValue(event.target.value)}></input>
+      <button onClick={Search}>Search for pokemon</button>
       <h2>Choose 5</h2>
       <ShowPokemon pokemons={pokemons} handleClick={MakeTeams}/>
       <br></br> 
