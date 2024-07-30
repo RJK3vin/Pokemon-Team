@@ -15,7 +15,7 @@ function ShowPokemon({pokemons, handleClick}) {
 export default function App() {
   const [pokemons, setPokemons] = useState([])
   const [team, setTeam] = useState([])
-  const [offset, setOffSet] = useState(20)
+  const [offset, setOffSet] = useState(0)
   const [textboxvalue, setTextBoxValue] = useState('')
   const limit = 20
   useEffect(() => {
