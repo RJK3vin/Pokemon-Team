@@ -1,8 +1,9 @@
-# React + Vite
+# Pokemon-Team-Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was to test my knowledge from my previous [project](https://github.com/RJK3vin/Shopping-Cart) and experience more with APIs. 
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+- The App component manages the state of Pokemon data fetched from the PokeAPI and allows users to search for pokemon and browse through pages
+- The ShowPokemon component displays Pokemon where users can click on them to manage their team 
+- CSS is used to style the buttons and layout 
