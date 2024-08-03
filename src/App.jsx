@@ -73,7 +73,7 @@ export default function App() {
   }
 
   function PreviousPage() {
-    if (offset === 20) {
+    if (offset === 0) {
       alert("No more pokemon")
     } else {
       setOffSet(prevOffSet => prevOffSet - limit)
